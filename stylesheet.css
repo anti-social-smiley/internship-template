@@ -1,0 +1,30 @@
+#sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -3px 0 6px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+  }
+  
+  #places-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  #map {
+    height: 400px;
+    width: 100%;
+  }
+  #place-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
