@@ -12,18 +12,21 @@
     ></script>
   </head>
   <body>
-    <h1>Google Maps</h1>
+    <h1 id="intro">Google Maps</h1>
     <input id="search-input" type="text" placeholder="Search for a place" />
-    <div id="map"></div>
-    <div id="place-details">
-      <h2 id="place-name"></h2>
-      <p id="place-address"></p>
-      <p id="place-phone"></p>
-      <p id="place-website"></p>
-    </div>
-    <div id="sidebar">
-      <h2>Recommended Places</h2>
-      <ul id="places-list"></ul>
+    <div id="container">
+      <div id="map"></div>
+      <div id="place-details">
+        <h2 id="place-name"></h2>
+        <p id="place-address"></p>
+        <p id="place-phone"></p>
+        <p id="place-website"></p>
+      </div>
+      <div id="sidebar"></div>
+      <div id="sidebar-container">
+        <h2>Recommended Places</h2>
+        <ul id="places-list"></ul>
+      </div>
     </div>
 
     <script>
@@ -69,12 +72,12 @@
           });
           markers = [];
 
-          // Fetch nearby places using Places API
+          // Fetch nearby places using Places api
           const placesService = new google.maps.places.PlacesService(map);
 
           const request = {
             location: place.geometry.location,
-            radius: 1000, // You can adjust the radius as needed
+            radius: 500,
             type: ["restaurant", "cafe", "museum", "park", "shopping_mall"],
           };
 
@@ -93,7 +96,7 @@
                 markers.push(marker);
 
                 li.addEventListener("click", () => {
-                  // Fetch detailed information about the selected place
+                  // Fetch detailed information about the selected place to show the user
                   const placeDetailsService =
                     new google.maps.places.PlacesService(map);
                   placeDetailsService.getDetails(

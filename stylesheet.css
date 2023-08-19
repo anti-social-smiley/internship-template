@@ -1,13 +1,33 @@
+
+body{
+  background-color: antiquewhite;
+}
+#intro{
+  background-color: aliceblue;
+  text-align: center;
+  font-size: 48px;
+}
+
+#container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #sidebar {
-    position: absolute;
+  display: flex;
+  flex-direction: column;
+    position:sticky;
     top: 0;
     right: 0;
     width: 300px;
     height: 100%;
-    background-color: white;
+    background-color: silver;
     box-shadow: -3px 0 6px rgba(0, 0, 0, 0.1);
     overflow-y: scroll;
   }
+
   
   #places-list {
     list-style: none;
@@ -22,9 +42,10 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: white;
+    background-color:aqua;
     padding: 10px;
     width: 100%;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     display: none;
   }
